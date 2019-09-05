@@ -20,7 +20,11 @@ class="form-control"
 </ng-template>
 <!--<p> {{ serverName }} </p>-->
 
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+<button class="btn btn-primary" (click)="onUpdatePasswordVisibility()" [innerHTML]="buttonText"> Display Details </button>
+<br>
+<hr>
+<p *ngIf="showPassword"> Secret password = tuna </p>
+<p *ngFor = "let click of clicks" [ngStyle] = "{backgroundColor: getColor()}" [ngClass] = " {biggerthan5: clicks.length >=5 }"> {{ click }} </p>
 
 
